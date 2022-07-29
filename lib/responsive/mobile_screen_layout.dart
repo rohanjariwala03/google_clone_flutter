@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_clone/colors.dart';
+import 'package:google_clone/widgets/mobile/mobile_footer.dart';
+import 'package:google_clone/widgets/signin_button.dart';
+import 'package:google_clone/widgets/translation_buttons.dart';
+import 'package:google_clone/widgets/web/web_search.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
@@ -10,7 +15,7 @@ class MobileScreenLayout extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: backgroundColor,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(
@@ -24,9 +29,9 @@ class MobileScreenLayout extends StatelessWidget {
           child: const DefaultTabController(
             length: 2,
             child: TabBar(
-              labelColor: Colors.blue,
+              labelColor: blueColor,
               unselectedLabelColor: Colors.grey,
-              indicatorColor: Colors.blue,
+              indicatorColor: blueColor,
               tabs: [
                 Tab(text: 'ALL'),
                 Tab(text: 'IMAGES'),
@@ -38,10 +43,11 @@ class MobileScreenLayout extends StatelessWidget {
           IconButton(
               icon: SvgPicture.asset(
                 'assets/images/more-apps.svg',
-                color: Colors.black54,
+                color: primaryColor,
               ),
               onPressed: () {}),
           const SizedBox(width: 10),
+          const SigninButton(),
         ],
       ),
       body: Padding(
@@ -55,9 +61,12 @@ class MobileScreenLayout extends StatelessWidget {
                 children: [
                   Column(
                     children: const [
+                      Search(),
                       SizedBox(height: 20),
+                      TranslationButtons(),
                     ],
                   ),
+                  const MobileFooter(),
                 ],
               ),
             ),

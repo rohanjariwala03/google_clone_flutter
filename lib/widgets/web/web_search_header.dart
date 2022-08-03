@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_clone/colors.dart';
-import 'package:google_clone/screens/search_screen.dart';
+import '../../colors.dart';
+import '../../screens/search_screen.dart';
 
 
 class WebSearchHeader extends StatelessWidget {

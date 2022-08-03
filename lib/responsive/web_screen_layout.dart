@@ -1,10 +1,13 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_clone/colors.dart';
-import 'package:google_clone/widgets/web/web_search.dart';
-import 'package:google_clone/widgets/translation_buttons.dart';
-import 'package:google_clone/widgets/web/search_buttons.dart';
-import 'package:google_clone/widgets/web/web_footer.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../colors.dart';
+import '../widgets/translation_buttons.dart';
+import '../widgets/web/search_buttons.dart';
+import '../widgets/web/web_footer.dart';
+import '../widgets/web/web_search.dart';
 
 class WebScreenLayout extends StatelessWidget {
   const WebScreenLayout({Key? key}) : super(key: key);

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:google_clone/colors.dart';
-import 'package:google_clone/services/api_service.dart';
-import 'package:google_clone/widgets/search_footer.dart';
-import 'package:google_clone/widgets/web/web_search_header.dart';
-import 'package:google_clone/widgets/search_result_component.dart';
-import 'package:google_clone/widgets/search_tabs.dart';
+import '../../colors.dart';
+import '../../services/api_service.dart';
+import '../../widgets/search_footer.dart';
+import '../../widgets/web/web_search_header.dart';
+import '../../widgets/search_result_component.dart';
+import '../../widgets/search_tabs.dart';
 
 class SearchScreen extends StatelessWidget {
   final String searchQuery;

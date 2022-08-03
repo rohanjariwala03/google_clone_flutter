@@ -1,5 +1,13 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../colors.dart';
+import '../widgets/translation_buttons.dart';
+import '../widgets/web/search_buttons.dart';
+import '../widgets/web/web_footer.dart';
+import '../widgets/web/web_search.dart';
 
 class WebScreenLayout extends StatelessWidget {
   const WebScreenLayout({Key? key}) : super(key: key);
@@ -11,7 +19,7 @@ class WebScreenLayout extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: backgroundColor,
           elevation: 0,
           actions: [
             TextButton(
@@ -19,7 +27,7 @@ class WebScreenLayout extends StatelessWidget {
               child: const Text(
                 'Gmail',
                 style: TextStyle(
-                  color: Colors.black54,
+                  color: primaryColor,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -29,7 +37,7 @@ class WebScreenLayout extends StatelessWidget {
               child: const Text(
                 'Images',
                 style: TextStyle(
-                  color: Colors.black54,
+                  color: primaryColor,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -37,7 +45,7 @@ class WebScreenLayout extends StatelessWidget {
             const SizedBox(width: 10),
             IconButton(
                 icon: SvgPicture.asset('assets/images/more-apps.svg',
-                    color: Colors.black54),
+                    color: primaryColor),
                 onPressed: () {}),
             const SizedBox(width: 10),
             Padding(
@@ -58,6 +66,24 @@ class WebScreenLayout extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: size.height * 0.25),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // since children of column are not supposed to be 'spaced between'
+                    Column(
+                      children: const [
+                        Search(),
+                        SizedBox(height: 20),
+                        SearchButtons(),
+                        SizedBox(height: 20),
+                        TranslationButtons(),
+                      ],
+                    ),
+                    const WebFooter(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
